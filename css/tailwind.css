@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors - Circuit Board Harmony */
+  --color-primary: #2E8B57; /* sea-green */
+  --color-primary-50: #F0F9F4; /* green-50 */
+  --color-primary-100: #DCF2E3; /* green-100 */
+  --color-primary-200: #BBE5C7; /* green-200 */
+  --color-primary-300: #86D4A0; /* green-300 */
+  --color-primary-400: #4ABA6F; /* green-400 */
+  --color-primary-500: #2E8B57; /* sea-green */
+  --color-primary-600: #237A4A; /* green-600 */
+  --color-primary-700: #1D653D; /* green-700 */
+  --color-primary-800: #1A5233; /* green-800 */
+  --color-primary-900: #16432B; /* green-900 */
+
+  /* Secondary Colors - Technical Depth */
+  --color-secondary: #4682B4; /* steel-blue */
+  --color-secondary-50: #F0F4F8; /* blue-50 */
+  --color-secondary-100: #E1E9F0; /* blue-100 */
+  --color-secondary-200: #C3D3E1; /* blue-200 */
+  --color-secondary-300: #9BB8D0; /* blue-300 */
+  --color-secondary-400: #6D9BC4; /* blue-400 */
+  --color-secondary-500: #4682B4; /* steel-blue */
+  --color-secondary-600: #3A6F9A; /* blue-600 */
+  --color-secondary-700: #2F5C80; /* blue-700 */
+  --color-secondary-800: #264A66; /* blue-800 */
+  --color-secondary-900: #1F3C54; /* blue-900 */
+
+  /* Accent Colors - Success Moments */
+  --color-accent: #32CD32; /* lime-green */
+  --color-accent-50: #F0FDF0; /* lime-50 */
+  --color-accent-100: #DCFCE7; /* lime-100 */
+  --color-accent-200: #BBF7D0; /* lime-200 */
+  --color-accent-300: #86EFAC; /* lime-300 */
+  --color-accent-400: #4ADE80; /* lime-400 */
+  --color-accent-500: #32CD32; /* lime-green */
+  --color-accent-600: #16A34A; /* lime-600 */
+  --color-accent-700: #15803D; /* lime-700 */
+  --color-accent-800: #166534; /* lime-800 */
+  --color-accent-900: #14532D; /* lime-900 */
+
+  /* Background Colors */
+  --color-background: #FAFAFA; /* gray-50 */
+  --color-surface: #FFFFFF; /* white */
+
+  /* Text Colors */
+  --color-text-primary: #2C3E50; /* slate-800 */
+  --color-text-secondary: #7F8C8D; /* gray-500 */
+
+  /* Status Colors */
+  --color-success: #27AE60; /* emerald-600 */
+  --color-warning: #F39C12; /* amber-500 */
+  --color-error: #E74C3C; /* red-500 */
+
+  /* Border Colors */
+  --color-border: #E5E7EB; /* gray-200 */
+  --color-border-light: #F3F4F6; /* gray-100 */
+
+  /* Shadow Colors */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Animation Durations */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 400ms;
+
+  /* Easing Functions */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    font-family: 'Source Sans Pro', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-inter font-semibold transition-all duration-300 ease-out hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white px-6 py-3 rounded-lg font-inter font-semibold transition-all duration-300 ease-out hover:bg-secondary-600 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white px-6 py-3 rounded-lg font-inter font-semibold transition-all duration-300 ease-out hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-surface rounded-lg shadow-md p-6 transition-shadow duration-300 ease-out hover:shadow-lg;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 ease-out;
+  }
+
+  .circuit-animation {
+    animation: circuit-flow var(--duration-slow) var(--ease-in-out) infinite;
+  }
+
+  .fade-in {
+    animation: fadeIn var(--duration-normal) var(--ease-out) forwards;
+  }
+
+  .slide-up {
+    animation: slideUp var(--duration-normal) var(--ease-out) forwards;
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .shadow-custom {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-custom-lg {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .transition-custom {
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+
+  .transition-slow {
+    transition: all var(--duration-slow) var(--ease-out);
+  }
+}
+
+/* Animations */
+@keyframes circuit-flow {
+  0% {
+    opacity: 0.3;
+    transform: translateX(-10px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateX(10px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design Helpers */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
